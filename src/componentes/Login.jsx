@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '/src/App.css'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import appFirebase from "../firebase/config"
 const auth = getAuth(appFirebase);
@@ -19,21 +20,32 @@ const handleSubmit = (e) => {
 };
 
   return (
-    <div>
-      <h2>Iniciar sesión</h2>
+    <div className="login">
 
-      <form onSubmit={handleSubmit}>
-        <input type="mail" placeholder="correo electronico" value={usuario}
-          onChange={(e) => setUsuario(e.target.value)}/>
+        <table>
+            <th>
+                <img src="./src/assets/logo.jpeg" alt=""/>
+            </th>
+
+            <th>
+                <h2 id="titulo">Iniciar sesión</h2>
+
+                <form className="contenedor" onSubmit={handleSubmit}>
+
+                    <input className="form" type="mail" placeholder="Correo Electronico" value={usuario}
+                    onChange={(e) => setUsuario(e.target.value)}/>
         
 
-        <input type="password" placeholder="Contraseña" value={password}
-          onChange={(e) => setPassword(e.target.value)}/>
+                    <input className="form" type="password" placeholder="Contraseña" value={password}
+                    onChange={(e) => setPassword(e.target.value)}/>
 
-        {error && <p>{error}</p>}
+                    {error && <p>{error}</p>}
 
-        <button type="submit">Entrar</button>
-      </form>
+                    <button className="btn" type="submit">Entrar</button>
+           
+                </form>  
+            </th> 
+        </table>
     </div>
   );
 }
