@@ -20,6 +20,18 @@
     padding: 2rem;
 }
 
+h1{
+  display: flex;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  max-width: 2000px;
+  margin: auto;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #2b3852;
+}
+
 .producto img{
     border: 2px solid rgb(180, 158, 158);
     border-radius: 10px;
