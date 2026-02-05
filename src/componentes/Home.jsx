@@ -1,12 +1,13 @@
 
 import productos from "./productos";
+import "./Home.css"
 
 function Home() {
   return (
-    <div className="home-container">
+    <div className="home-contenedor">
       
       <nav className="nav">
-        <h2 className="logo">Mi Tienda</h2>
+        <img src="./src/assets/logo.jpeg" alt=""/>
         <button className="logout">Salir</button>
       </nav>
 
@@ -20,6 +21,7 @@ function Home() {
                     <h3>{prod.nombre}</h3>
                     <p>${prod.preciosinensamblar}</p>
                     <p>${prod.precioensamblado}</p>
+                     <button className="comprar">Comprar</button>
                 </div>
                 ))}
             
