@@ -16,6 +16,7 @@ function Home() {
             <div className="productos">
             {productos.map((prod) => (
                 <div key={prod.id} className="producto">
+                    <img src={prod.img} alt={prod.nombre} />
                     <h3>{prod.nombre}</h3>
                     <p>${prod.preciosinensamblar}</p>
                     <p>${prod.precioensamblado}</p>
