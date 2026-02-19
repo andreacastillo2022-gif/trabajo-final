@@ -48,3 +48,12 @@ Este proyecto prioriza la correcta aplicacion de los conceptos vistos en clases.
 Dificultades encontradas y soluciones:
 Manejo de sesión persistente: se resolvió utilizando el listener de Firebase Auth dentro del AuthContext.
 Gestión de credenciales: se solucionó mediante el uso de .env y .gitignore.
+
+# recursos y bibliografia
+1. https://www.youtube.com/watch?v=PT5Tr5V6UU4&t=1s
+2. CLASES UTN
+3. https://www.youtube.com/watch?v=S00QW-h7prw&t=342s
+4. M3 U3 React avanzado – Context API.pptx
+5. https://www.shecodes.io/athena/42133-how-to-list-products-in-javascript
+6. https://www.w3schools.com/howto/howto_css_login_form.asp
+
