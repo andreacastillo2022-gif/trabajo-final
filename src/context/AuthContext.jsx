@@ -8,7 +8,7 @@ export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+
 
 useEffect(() => {
  return onAuthStateChanged(Aut, setUser);
@@ -18,7 +18,7 @@ return (
   <AuthContext.Provider value={{ user, logout: () => signOut(auth) }}>
     {children}
   </AuthContext.Provider>
-);
+); 
 }
 
 export const useAuth = () => useContext(AuthContext);

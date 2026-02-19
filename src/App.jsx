@@ -1,31 +1,11 @@
-import { useEffect, useState } from "react";
-import './App.css'
+import { useAuth } from "./context/AuthContext";
 import Login from "./componentes/Login";
 import Home from "./componentes/Home";
-import appFirebase from "./firebase/config"
-import {getAuth, onAuthStateChanged} from 'firebase/auth';
-const auth = getAuth(appFirebase)
-
 
 
 function App() {
 
-    const [usuario, setUsuario] = useState(null);
-
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (usuarioFirebase) => {
-            if (usuarioFirebase) {
-                setUsuario(usuarioFirebase);
-                } 
-            else {
-                setUsuario(null);
-            }
-    });
-
-    return () => unsubscribe();
-
-    }, []);
-
+    const { user }= useAuth();
 
     return (
         <div>
