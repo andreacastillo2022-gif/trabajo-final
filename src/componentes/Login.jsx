@@ -1,11 +1,10 @@
 import { useState } from "react";
 import '/src/App.css'
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import appFirebase from "../firebase/config"
-const auth = getAuth(appFirebase);
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase/config";
 
 function Login() {
-  const [usuario, setUsuario] = useState("");
+  const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
@@ -13,7 +12,7 @@ const handleSubmit = (e) => {
   e.preventDefault();
   setError("");
 
-  signInWithEmailAndPassword(auth, usuario, password)
+  signInWithEmailAndPassword(auth, user, password)
     .catch(() => {
       setError("Usuario o contraseña incorrectos");
     });
@@ -23,6 +22,8 @@ const handleSubmit = (e) => {
     <div className="login">
 
         <table>
+          <tbody>
+          <tr>
             <th>
                 <img src="./src/assets/logo.jpeg" alt=""/>
             </th>
@@ -32,8 +33,8 @@ const handleSubmit = (e) => {
 
                 <form className="contenedor" onSubmit={handleSubmit}>
 
-                    <input className="form" type="mail" placeholder="Correo Electronico" value={usuario}
-                    onChange={(e) => setUsuario(e.target.value)}/>
+                    <input className="form" type="email" placeholder="Correo Electronico" value={user}
+                    onChange={(e) => setUser(e.target.value)}/>
         
 
                     <input className="form" type="password" placeholder="Contraseña" value={password}
@@ -45,6 +46,8 @@ const handleSubmit = (e) => {
            
                 </form>  
             </th> 
+          </tr>
+          </tbody>
         </table>
     </div>
   );

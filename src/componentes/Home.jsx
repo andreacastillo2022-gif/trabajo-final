@@ -1,8 +1,24 @@
-
-import productos from "./productos";
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/config";
 import "./Home.css"
 
-function Home() {
+function Home() { 
+  const[productos, setProductos]= useState([]);
+  
+  useEffect(() => {
+  const obtenerProductos = async () => {
+    const querySnapshot = await getDocs(collection(db, "productos"));
+    const lista = querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+    setProductos(lista);
+  };
+
+  obtenerProductos();
+}, []);
+
   return (
     <div className="home-contenedor">
       

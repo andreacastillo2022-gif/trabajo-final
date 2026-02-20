@@ -7,9 +7,12 @@ function App() {
 
     const { user }= useAuth();
 
+
+  console.log("USER EN APP:", user);
+
     return (
         <div>
-                {usuario ? <Home/> : <Login/>}
+                {user ? <Home/> : <Login/>}
         </div>
     )
         
