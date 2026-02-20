@@ -1,4 +1,6 @@
-# React + Vite
+# CORRECIONES RECUPERATORIO
+
+![Captura1](/src/assets/basededatos.png)
 
 # Descripción general del proyecto
 
@@ -6,6 +8,8 @@ Consiste en el desarrollo de una aplicación web construida con React JS, es una
 Se dividé en dos JSX principales, el "Login" donde el usuario debe logearse exitosamente mediante Firebase Authentication con correo electronico y contraseña preestablecida para acceder a un Dashboard protegido; el Home. 
 En esta ultimo, es donde se presenta ante el usuario una lista de productos con su nombre, precios y botón para comprar.
 Ambas cuentan con el logo del local.
+
+
 
 # CUENTAS CON ACCESO A LA PAGINA
 
